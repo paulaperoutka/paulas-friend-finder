@@ -1,7 +1,7 @@
 // A GET route with the url /api/friends. This will be used to display a JSON of all possible friends.
 // A POST routes /api/friends. This will be used to handle incoming survey results. This route will also be used to handle the compatibility logic.
 
-const friends = require("../data/friends");
+let friends = require("../data/friends");
 
 module.exports = (app) => {
 
@@ -37,16 +37,18 @@ module.exports = (app) => {
   	return totalScore;
   };
 
-  function compareScores(scoreData) {
-  	let newSurveyScore = scoreSum(scoreData);
+  function compareScores(data) {
+    let newSurveyScore = scoreSum(data);
 
   	let scoreComparison = [];
 
   	friends.forEach(i => {
   		let friendScore = scoreSum(i.scores);
   		let comparedScore = Math.abs(friendScore - newSurveyScore);
-  		scoreComparison.push(comparedScores);
-  	});
+  		scoreComparison.push(comparedScore);
+    });
+    
+    console.log("Correctly totalled all scores:" + scoreComparison);
 
   	let closestScore = scoreComparison[0];
   	let whichFriend = 0;

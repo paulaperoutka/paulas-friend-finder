@@ -8,6 +8,9 @@
   <!-- Favicon -->
   <link rel="shortcut icon" type="image/icon" href="../images/favicon.ico">
 
+  <!-- jQuery Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -16,6 +19,7 @@
 
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 
   <!-- Font Awesome Glyphicons -->
   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"> -->
@@ -58,7 +62,7 @@
         <h2>Tell us more:</h2>
 
         <h3>1. I radiate joy!</h3>
-          <select id="Q2">
+          <select class="question" id="Q1">
             <option value="0">Select</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2 (Moderately Disagree)</option>
@@ -68,7 +72,7 @@
           </select>
 
         <h3>2. I get chores done right away.</h3>
-          <select id="Q2">
+          <select class="question" id="Q2">
             <option value="0">Select</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2 (Moderately Disagree)</option>
@@ -78,7 +82,7 @@
           </select>
 
         <h3>3. I seek adventure.</h3>
-          <select id="Q3">
+          <select class="question" id="Q3">
             <option value="0">Select</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2 (Moderately Disagree)</option>
@@ -88,7 +92,7 @@
           </select>
 
         <h3>4. I get upset easily.</h3>
-          <select id="Q4">
+          <select class="question" id="Q4">
             <option value="0">Select</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2 (Moderately Disagree)</option>
@@ -98,7 +102,7 @@
           </select>
 
         <h3>5. I trust what people say.</h3>
-          <select id="Q5">
+          <select class="question" id="Q5">
             <option value="0">Select</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2 (Moderately Disagree)</option>
@@ -108,7 +112,7 @@
           </select>
 
         <h3>6. I can't make up my mind.</h3>
-          <select id="Q6">
+          <select class="question" id="Q6">
             <option value="0">Select</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2 (Moderately Disagree)</option>
@@ -118,7 +122,7 @@
           </select>
 
         <h3>7. I am comfortable around others.</h3>
-          <select id="Q7">
+          <select class="question" id="Q7">
             <option value="0">Select</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2 (Moderately Disagree)</option>
@@ -128,7 +132,7 @@
           </select>
 
         <h3>8. I consider myself an average person.</h3>
-          <select id="Q8">
+          <select class="question" id="Q8">
             <option value="0">Select</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2 (Moderately Disagree)</option>
@@ -138,7 +142,7 @@
           </select>
 
         <h3>9. I see beauty in things that others might not notice.</h3>
-          <select id="Q9">
+          <select class="question" id="Q9">
             <option value="0">Select</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2 (Moderately Disagree)</option>
@@ -148,7 +152,7 @@
           </select>
 
         <h3>10. I believe that there is no absolute right or wrong.</h3>
-          <select id="Q10">
+          <select class="question" id="Q10">
             <option value="0">Select</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2 (Moderately Disagree)</option>
@@ -167,45 +171,32 @@
     
     <div class="row text-center" id="befriend"> 
       <div class="col-md-12">
-        <a href="/survey"><button type="button" class="btn btn-lg btn-success">Befriend <span class="glyphicon glyphicon-random"></span></button></a>
+        <a href="/survey"><button type="button" class="btn btn-lg btn-success" id="befriend-btn">Befriend <span class="glyphicon glyphicon-random"></span></button></a>
       </div>
     </div>
 
     <footer class="footer">
       <div class="container">
-        <p><a href="/api/tables">API Friends List</a> | <a href="/api/waitlist">Heroku Repo</a>
+        <p><a href="/api/friends">API Friends List</a> | <!-- <a href="/public/home.html">Heroku Repo</a> --></p>
       </div>
     </footer>
 
   </div>
-
-   <!-- Modal Structure -->
-  <div class="modal fade" id="">
-    <div class="modal-content">
-      <h4>You've Got a Match!</h4>
-      <div class="intro bestfriend">
-      </div>
-      <p>You've Matched with</p>
-      <div id="match-results"></div>
-      <h5><span id="bestfriend-name"></span></h5>
-      Make some cool plans and share a cold brew.
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-    </div>
-  </div>
   
 <!-- Modal -->
-  <div class="modal fade" id="newFriend" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal fade" id="friend-modal" tabindex="-1" role="dialog" aria-labelledby="newFriendTitle" aria-hidden="true">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Your new best friend is...</h5>
+        <h5 class="modal-title" id="newFriendTitle">Your new best friend is...</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
 <!-- modal content here -->
+        <h4 class="modal-title"><span id="friend-name"></span></h4>
+        <br>
+        <img class="img-responsive" id="friend-pic">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -218,6 +209,52 @@
 
 </html>
 
+<script type="text/javascript">
+  $("#befriend-btn").on("click", (event)=> {
+    event.preventDefault();
+    console.log("Clicked.");
+    if($("#name").val() && $("#pic").val() && $(".question").val() !== "Select"){
+      let newSurvey = {
+        name: $("#name").val().trim(),
+        photo: $("#pic").val().trim(),
+        scores: [
+          $("#Q1").val(),
+          $("#Q2").val(),
+          $("#Q3").val(),
+          $("#Q4").val(),
+          $("#Q5").val(),
+          $("#Q6").val(),
+          $("#Q7").val(),
+          $("#Q8").val(),
+          $("#Q9").val(),
+          $("#Q10").val()
+        ]
+      };
 
+      $.post("/api/friends", newSurvey, (data) => {
+        if (data) {
+          $("#friend-name").html(data.name);
+          $("#friend-pic").attr("src", data.photo);
+          $('#friend-modal').modal("toggle");
+        }
 
-<!--  -->
+        else {
+          $("#friend-name").text("We encountered a slight problem.  Try again if you wish to make friends!");
+          $("#friend-img").attr("src", "https://cdn.pixabay.com/photo/2012/05/07/12/03/frog-48234_1280.pnghttps://media.giphy.com/media/73h3LBWraONTW/giphy.gif");
+          $("#friend-modal").modal("toggle");
+        }
+
+        $("#name").val("");
+        $("#pic").val("");
+        $(".question").val("0");
+      });
+    }
+
+    else{
+      console.log("Clicked but bad.");
+      $("#friend-name").text("No one yet! Please complete all fields in order for us to find you a friend.");
+      $("#friend-pic").attr("src", "https://media.giphy.com/media/C9AuY1VOvurxm/giphy.gif");
+      $('#friend-modal').modal("toggle");
+    }
+  });
+</script>
