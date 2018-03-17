@@ -10,8 +10,59 @@ module.exports = (app) => {
   });
 
   app.post("/api/friends", (req, res) => {
-    friends.push(req.body);
-    res.json(true);
+  	let newSurvey = req.body;
+  	
+  	let newSurveyScores = newSurvey.scores;
+  	let newSurveyArray = [];
+
+  	newSurveyScores.forEach(i => {
+  		let score = parseInt(i);
+  		newSurveyArray.push(score);
+  	});
+
+  	newSurveyScores = newSurveyArray;
+  	friends.push(newSurvey);
+
+  	let befriend = compareScores(newSurveyScores);
+
+    res.json(befriend);
   });
 
+  function scoreSum(scores){
+  	let totalScore = 0;
+  	let scoreArray = scores;
+  	scoreArray.forEach(i => {
+  		totalScore += parseInt(i);
+  	})
+  	return totalScore;
+  };
+
+  function compareScores(scoreData) {
+  	let newSurveyScore = scoreSum(scoreData);
+
+  	let scoreComparison = [];
+
+  	friends.forEach(i => {
+  		let friendScore = scoreSum(i.scores);
+  		let comparedScore = Math.abs(friendScore - newSurveyScore);
+  		scoreComparison.push(comparedScores);
+  	});
+
+  	let closestScore = scoreComparison[0];
+  	let whichFriend = 0;
+
+  	for (j = 1; j < scoreComparison.length-1; j++) {
+  		if (scoreComparison[j] < closestScore) {
+  			closestScore = scoreComparison[j];
+  			whichFriend = j;
+  		};
+  	};
+
+  	return friends[whichFriend];
+  };
 };
+
+
+    
+
+    
